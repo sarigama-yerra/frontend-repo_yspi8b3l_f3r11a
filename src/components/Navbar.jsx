@@ -16,17 +16,17 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mt-4 bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
           <div className="flex items-center justify-between px-6 py-4">
-            <a href="#" className="flex items-center gap-2 group">
+            <a href="#" className="flex items-center gap-2 group" aria-label="Clerva home">
               <div className="relative">
-                <div className="absolute inset-0 rounded-lg bg-blue-500/30 blur-md group-hover:bg-blue-400/40 transition-colors" />
-                <div className="relative rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 p-2">
+                <div className="absolute inset-0 rounded-lg bg-blue-500/30 blur-md group-hover:bg-fuchsia-400/40 transition-colors" />
+                <div className="relative rounded-lg bg-gradient-to-br from-blue-500 via-purple-500 to-fuchsia-600 p-2">
                   <Sparkles className="text-white" size={18} />
                 </div>
               </div>
               <span className="text-white font-semibold text-lg tracking-tight">Clerva</span>
             </a>
 
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
               {navItems.map((item) => (
                 <a key={item.href} href={item.href} className="text-sm text-slate-300 hover:text-white transition-colors">
                   {item.label}
@@ -37,7 +37,7 @@ export default function Navbar() {
               </a>
             </nav>
 
-            <button onClick={() => setOpen(!open)} className="md:hidden text-white p-2">
+            <button onClick={() => setOpen(!open)} className="md:hidden text-white p-2" aria-expanded={open} aria-label="Toggle menu">
               {open ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
